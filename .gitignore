@@ -30,3 +30,6 @@ _vsf_no_ces/
 .idea/
 .vscode/
 .DS_Store
+
+# 发行版分卷（大文件，手动上传到 Gitee 发行版，不入库）
+release_parts/

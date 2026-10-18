@@ -5,7 +5,7 @@
 - **桌面版（推荐给普通用户）**：打包成免安装的便携软件，解压双击即用、**无需账号**、内置数据库，不需要装 Python/MySQL。
 - **网页版（服务器部署）**：Vue3 + FastAPI 前后端分离，带账号体系（邮箱注册 + 激活码）与管理员后台。
 
-界面为淡黄简约风格。功能照搬 [video-subtitle-extractor](https://github.com/YaoFANGUK/video-subtitle-extractor)：本地 OCR 提取视频硬字幕，生成 SRT/TXT 字幕文件，并可边播放边校对改错字。
+界面为淡黄简约风格，用本地 OCR 提取视频硬字幕，生成 SRT/TXT 字幕文件，并可边播放边校对改错字。个人学习开发，纯本地离线运行。
 
 ## 桌面版（便携软件）
 
@@ -89,7 +89,7 @@ ZiMu/
 │   ├── app/
 │   │   ├── routers/    # auth / admin / extract
 │   │   ├── services/
-│   │   │   ├── extraction/  # 提取引擎（照搬原项目，CPU 版）
+│   │   │   ├── extraction/  # 提取引擎（CPU 版）
 │   │   │   └── task_manager.py
 │   │   ├── config.py   database.py   models.py   security.py   schemas.py
 │   ├── models/V5/      # PP-OCRv5 模型（必须）

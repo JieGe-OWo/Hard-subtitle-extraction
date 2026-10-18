@@ -1,5 +1,5 @@
-# -*- coding: UTF-8 -*-
-"""英文连写分词与文本整理（照搬原项目 reformat.py）"""
+﻿# -*- coding: UTF-8 -*-
+"""英文连写分词与文本整理"""
 import json
 import os
 import re

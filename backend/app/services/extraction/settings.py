@@ -1,4 +1,4 @@
-class _V:
+﻿class _V:
     __slots__ = ('value',)
 
     def __init__(self, value):
@@ -9,7 +9,7 @@ class _V:
 
 
 class ExtractionConfig:
-    """提取参数，默认值照搬原项目 config/config.json，CPU 部署，硬件加速默认关闭"""
+    """提取参数默认值，CPU 部署，硬件加速默认关闭"""
 
     def __init__(self, **overrides):
         defaults = dict(

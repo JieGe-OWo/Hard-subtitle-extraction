@@ -1,4 +1,4 @@
-import os
+﻿import os
 import re
 import shutil
 import threading
@@ -27,7 +27,7 @@ from app.services.unicode_io import imwrite_unicode
 
 
 class VideoSubtitleExtractor:
-    """视频硬字幕提取（CPU 部署版，照搬原项目 video-subtitle-extractor 逻辑）"""
+    """视频硬字幕提取（CPU 部署版）"""
 
     def __init__(self, video_path, output_dir, sub_area=None, config: ExtractionConfig = None,
                  cancel_event: threading.Event = None, on_progress=None, on_log=None):
@@ -850,7 +850,7 @@ class VideoSubtitleExtractor:
     def _frameno_to_milliseconds(self, frame_no):
         return float(int(frame_no / self.fps * 1000))
 
-    # ---------------- 去重（核心，照搬） ----------------
+    # ---------------- 去重（核心） ----------------
 
     def _remove_duplicate_subtitle(self):
         self._concat_content_with_same_frameno()
