@@ -1,16 +1,21 @@
 <template>
   <router-view />
+  <star-dialog />
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
 import { useUserStore } from './store/user'
+import StarDialog from '@/components/StarDialog.vue'
+import { maybeAutoShowStar } from '@/composables/useStarDialog'
 
 const userStore = useUserStore()
 onMounted(() => {
   if (userStore.token && !userStore.user) {
     userStore.fetchMe().catch(() => userStore.logout())
   }
+  // 打开页面时（首次访问）弹一次「点个 Star」提示
+  maybeAutoShowStar()
 })
 </script>
 

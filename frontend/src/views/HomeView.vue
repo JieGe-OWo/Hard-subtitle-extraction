@@ -1,4 +1,4 @@
-<template>
+﻿<template>
   <div class="home">
     <header class="header">
       <div class="brand">
@@ -6,6 +6,9 @@
         <span class="title">杰哥硬字幕提取</span>
       </div>
       <div class="actions">
+        <el-tooltip content="给项目点个 Star ⭐" placement="bottom">
+          <el-button size="small" text class="star-btn" @click="openStarDialog">⭐ Star</el-button>
+        </el-tooltip>
         <el-tag size="small" type="info">{{ userStore.isDesktop ? '桌面版 · 免登录' : 'CPU 部署版' }}</el-tag>
         <el-button v-if="userStore.isAdmin && !userStore.isDesktop" size="small" @click="$router.push('/admin/dashboard')">管理后台</el-button>
         <el-dropdown v-if="!userStore.isDesktop">
@@ -220,6 +223,7 @@ import { useRouter } from 'vue-router'
 import { ElMessage } from 'element-plus'
 import { UploadFilled, Document } from '@element-plus/icons-vue'
 import SubtitleAreaPicker from '@/components/AreaPickerDialog.vue'
+import { openStarDialog } from '@/composables/useStarDialog'
 import { extractApi } from '@/api/extract'
 import { useUserStore } from '@/store/user'
 
