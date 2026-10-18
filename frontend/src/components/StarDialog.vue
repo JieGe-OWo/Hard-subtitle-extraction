@@ -29,9 +29,9 @@
       </div>
 
       <div class="foot">
-        <el-button text size="small" @click="onNever">不再提示</el-button>
+        <span class="tip">后续更新看这两个仓库</span>
         <span class="spacer"></span>
-        <el-button size="small" @click="onSnooze">稍后再说</el-button>
+        <el-button size="small" type="primary" plain @click="close">知道了</el-button>
       </div>
     </div>
   </el-dialog>
@@ -41,7 +41,7 @@
 import { computed } from 'vue'
 import { ElMessage } from 'element-plus'
 import { REPOS } from '@/config/repos'
-import { starVisible, snoozeStar, neverStar } from '@/composables/useStarDialog'
+import { starVisible, closeStarDialog } from '@/composables/useStarDialog'
 
 const visible = computed({
   get: () => starVisible.value,
@@ -53,13 +53,8 @@ function goStar(repo) {
   ElMessage.success(`已打开 ${repo.name}，点右上角 Star ⭐ 就行`)
 }
 
-function onSnooze() {
-  snoozeStar()
-}
-
-function onNever() {
-  neverStar()
-  ElMessage.info('好的，之后不再自动提醒（顶栏 ⭐ 仍可随时打开）')
+function close() {
+  closeStarDialog()
 }
 </script>
 
@@ -92,6 +87,7 @@ function onNever() {
 .repo-star { font-size: 12px; color: var(--zm-text-dim); }
 
 .foot { display: flex; align-items: center; margin-top: 16px; }
+.tip { font-size: 12px; color: var(--zm-text-dim); }
 .spacer { flex: 1; }
 </style>
 
