@@ -1,4 +1,4 @@
-# 杰哥硬字幕提取
+﻿# 杰哥硬字幕提取
 
 **视频硬字幕提取**工具（CPU 部署）。两种用法：
 
@@ -29,6 +29,8 @@ python build_portable.py              # 在项目根目录执行，产出 dist_p
 ```
 
 打包脚本会复制一份 Python 3.12 运行时 + 全部依赖 + OCR 模型 + VideoSubFinder，产出约 **1.5GB** 的免安装目录；压缩成 zip 发给别人即可。
+
+> 📦 **模型怎么下载和配置**：仓库不含 OCR 模型（约 253 MB）和 VideoSubFinder（182 MB），详细步骤见 [模型配置说明.md](模型配置说明.md)。
 
 > **中文路径兼容**：Paddle Inference、VideoSubFinder 这类 C++ 组件在 Windows 下用 ANSI 文件接口，
 > 软件一旦装在含中文的路径下（如 `D:\软件\杰哥硬字幕提取`）就会读不到模型。项目在
