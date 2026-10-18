@@ -1,0 +1,32 @@
+# ---- 运行时 / 依赖（体积大，不入库） ----
+backend/venv/
+frontend/node_modules/
+runtime/
+dist_portable/
+_portable_run/
+杰哥硬字幕提取-Windows便携版/
+
+# ---- OCR 模型与 VideoSubFinder 二进制（共 435MB，另行获取，见 README） ----
+backend/models/
+backend/subfinder/
+
+# ---- 运行期数据 ----
+backend/data/
+backend/.env
+*.db
+*.db-journal
+
+# ---- 构建与临时产物 ----
+__pycache__/
+*.py[cod]
+*.log
+*.zip
+_frames/
+_test_assets/
+_vsf_test/
+_vsf_repro/
+_vsf_predirs/
+_vsf_no_ces/
+.idea/
+.vscode/
+.DS_Store

@@ -1,0 +1,126 @@
+/* =====================================================================
+   杰哥硬字幕提取 · 全局主题（淡黄简约）
+   覆盖 Element Plus 的 CSS 变量，再补充少量项目级样式。
+   注意：必须在 element-plus/dist/index.css 之后引入。
+   ===================================================================== */
+
+:root {
+  /* ---------- Element Plus 主色（暖琥珀金） ---------- */
+  --el-color-primary: #d2952a;
+  --el-color-primary-light-3: #dfae57;
+  --el-color-primary-light-5: #e9c88b;
+  --el-color-primary-light-7: #f2deb8;
+  --el-color-primary-light-8: #f7e9cf;
+  --el-color-primary-light-9: #fcf5e6;
+  --el-color-primary-dark-2: #b57c18;
+
+  --el-color-success: #7fa650;
+  --el-color-success-light-9: #f2f8e8;
+  --el-color-warning: #e0a02a;
+  --el-color-warning-light-9: #fdf5e3;
+  --el-color-danger: #d1604a;
+  --el-color-danger-light-9: #fbeeeb;
+  --el-color-info: #a99a80;
+  --el-color-info-light-9: #f7f3ea;
+
+  /* ---------- 文字（暖灰，不用纯黑） ---------- */
+  --el-text-color-primary: #4a4034;
+  --el-text-color-regular: #6b5f4c;
+  --el-text-color-secondary: #9b8f7a;
+  --el-text-color-placeholder: #c3b8a4;
+  --el-text-color-disabled: #cfc6b4;
+
+  /* ---------- 边框 / 填充 ---------- */
+  --el-border-color: #ecdfc4;
+  --el-border-color-light: #f2e8d3;
+  --el-border-color-lighter: #f7f0e0;
+  --el-border-color-extra-light: #fbf6ea;
+  --el-border-color-dark: #e0d0ae;
+  --el-border-color-darker: #d3bf97;
+
+  --el-fill-color: #f8f1e2;
+  --el-fill-color-light: #fbf6ea;
+  --el-fill-color-lighter: #fdf9f1;
+  --el-fill-color-extra-light: #fffdf7;
+  --el-fill-color-blank: #ffffff;
+
+  --el-bg-color: #ffffff;
+  --el-bg-color-page: #fffbef;
+  --el-bg-color-overlay: #ffffff;
+
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 6px;
+
+  --el-box-shadow-light: 0 4px 16px rgba(184, 125, 31, 0.08);
+  --el-box-shadow: 0 8px 26px rgba(184, 125, 31, 0.12);
+
+  /* ---------- 项目自定义变量 ---------- */
+  --zm-bg: #fffbef;
+  --zm-bg-soft: linear-gradient(180deg, #fffdf7 0%, #fdf4e2 100%);
+  --zm-card: #ffffff;
+  --zm-accent: #d2952a;
+  --zm-accent-strong: #b57c18;
+  --zm-accent-soft: #fdf3dd;
+  --zm-accent-line: #f0dcae;
+  --zm-line: #f0e4cd;
+  --zm-text: #4a4034;
+  --zm-text-dim: #9b8f7a;
+  --zm-shadow: 0 6px 22px rgba(184, 125, 31, 0.08);
+  --zm-shadow-hover: 0 10px 30px rgba(184, 125, 31, 0.16);
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--zm-bg);
+  color: var(--zm-text);
+}
+
+* { box-sizing: border-box }
+
+/* ---------- 卡片：暖色描边 + 柔和阴影 + 渐变标题栏 ---------- */
+.el-card {
+  border-radius: 12px;
+  border-color: var(--zm-line);
+  box-shadow: var(--zm-shadow) !important;
+  overflow: hidden;
+}
+.el-card__header {
+  border-bottom: 1px solid var(--zm-line);
+  background: linear-gradient(180deg, #fffdf7, #fdf6e6);
+  font-weight: 600;
+  color: var(--zm-text);
+}
+.el-card__body { background: var(--zm-card); }
+
+/* ---------- 表格 / 弹窗 / 表单 ---------- */
+.el-table {
+  --el-table-border-color: var(--zm-line);
+  --el-table-header-bg-color: #fdf6e6;
+  --el-table-header-text-color: var(--zm-text);
+  --el-table-row-hover-bg-color: #fdf8ec;
+}
+.el-dialog,
+.el-message-box { border-radius: 14px; }
+.el-input__wrapper,
+.el-textarea__inner { border-radius: 8px; }
+.el-button { border-radius: 8px; }
+.el-tag { border-radius: 6px; }
+
+.el-descriptions__body .el-descriptions__table.is-bordered .el-descriptions__cell {
+  border-color: var(--zm-line);
+}
+.el-descriptions__label { color: var(--zm-text-dim) !important; }
+
+/* 进度条、滑块用主色（Element 已用 --el-color-primary，这里只微调背景） */
+.el-progress-bar__outer { background-color: #f6efdf; }
+.el-slider__runway { background-color: #f2e8d3; }
+
+/* ---------- 滚动条 ---------- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #e8d9b8; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #d9c396; }
+::-webkit-scrollbar-track { background: transparent; }
